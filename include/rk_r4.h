@@ -13,7 +13,6 @@
 */
 #include <math.h>
 #include <vector>
-using namespace std;
 
 void rk4_fixed(double& x, vector<double>& y, void (*rhs_eval)(double, vector<double>, vector<double>&), double h){
     int n = y.size(); // this is the size of the vector y, or number of dependents

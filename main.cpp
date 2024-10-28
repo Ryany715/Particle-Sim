@@ -3,23 +3,24 @@
 #include "rigid_body.cpp" // defines the physics for a rigid body and the class itself
 #include "include/user_input.h" // defines the inital conditions for the code
 #include "include/io.h" // defines functions for printing to the console
+#include "include/timer.h"
 #include "include/rk_r4.h"
 
 using namespace std;
 
 int main() {
-    // test case to create a rigidbbody with gravity acting on it only
-    // for now we hard code in initial conditions, but these need to be dynamic in the future
-    RigidBody TestBody(startpos, FGRAV, mass, startvel, dt_input);
-    vecPrint("Initial TestBody dvdt", TestBody.velocity);
-    float curr_time = 0.0;
-    // this is endless loop condition - solve for velocity without knowing how many steps
-    while (curr_time < totalTime){
-      TestBody.applyForce(FGRAV, dt_input);
-      curr_time += dt_input;
-      vecPrint("Curr TestBody dvdt", TestBody.velocity);
-      floatPrint("Curr Sim Time", curr_time);
-    }
+  // start the simulation timer
+  Timer simTimer;
+  RigidBody TestBody(0, startpos, FGRAV, mass, startvel, dt_input);
+  // this creates a pointer to the accel function in Rigid body
+  void (RigidBody::*func)(double, vector<double>, vector<double>&) = &RigidBody::accel;
+  // now calling the rk4 function using the pointer that was just created
+  rk4_fixed(totalTime, TestBody.velocity, (TestBody.*func)(TestBody.bodymass, TestBody.force, TestBody.dvdt), dt_input);
+  // in the context of the rk4 methodology x in position, dxdt is velocity and dvdt(d''xdt) is accelration, which is deterministic
+  vecPrint("Initial TestBody dvdt", TestBody.velocity);
+  // this is endless loop condition - solve for velocity without knowing how many steps
+  simTimer.elapsedTime();
+  vecPrint("Curr TestBody dvdt", TestBody.velocity);
   // debug params
   return TestBody.bodymass;
 } 
