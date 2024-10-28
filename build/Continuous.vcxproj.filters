@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Ryan\Documents\Particle-Sim\build\CMakeFiles\17ddde6c755f51e26c97f654d978e3e4\Continuous.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Ryan\Documents\Particle-Sim\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\Ryan\Documents\Particle-Sim\build\CMakeFiles\Continuous" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{2C17F872-2BE6-34DB-AF68-DFF2DECA99D2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
