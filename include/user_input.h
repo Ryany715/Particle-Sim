@@ -11,9 +11,9 @@ using namespace std;
   
 vector<double> startpos = {0 , 100, 0};
 vector<double> startvel = {0 , 30, 0};
-int mass = 10;
+double mass = 10;
 
 
 // time vars
-const float totalTime = 0;
-const float dt_input = .001;
+double totalTime = 0;
+double dt_input = .001;

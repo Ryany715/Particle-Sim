@@ -240,9 +240,6 @@ MEMORYCHECK_COMMAND:FILEPATH=MEMORYCHECK_COMMAND-NOTFOUND
 //File that contains suppressions for the memory checker
 MEMORYCHECK_SUPPRESSIONS_FILE:FILEPATH=
 
-//The directory containing a CMake configuration file for Open3D.
-Open3D_DIR:PATH=Open3D_DIR-NOTFOUND
-
 //Value Computed by CMake
 Particle-Sim_BINARY_DIR:STATIC=C:/Users/Ryan/Documents/Particle-Sim/build
 
